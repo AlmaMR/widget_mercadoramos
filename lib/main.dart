@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:widget_mercadoramos/config/router/app_router.dart';
 import 'package:widget_mercadoramos/config/theme/app_theme.dart';
-import 'package:widget_mercadoramos/presentacion/screens/home/home_screen.dart';
+//import 'package:widget_mercadoramos/presentacion/screens/home/home_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -11,20 +12,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: AppTheme(selectedColor: 10).themeData(),
-      // home: Scaffold(
-      //   body: Center(
-      //     child: FilledButton(
-      //       onPressed: () {
-      //         print('Mercado Ramos');
-      //       },
-      //       child: Text('Mercado Ramos'),
-      //     ),
-      //   ),
-      // ),
-      home: HomeScreen(),
+      routerConfig: appRouter,
+      // routerDelegate: appRouter.routerDelegate,
+      // routeInformationParser: appRouter.routeInformationParser,
     );
   }
 }

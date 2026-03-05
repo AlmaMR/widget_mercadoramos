@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:widget_mercadoramos/config/menu/menu_items.dart';
-import 'package:widget_mercadoramos/presentacion/screens/buttons/buttons_screen.dart';
 
 class HomeScreen extends StatelessWidget {
+  static const String name = 'home_screen';
+
   const HomeScreen({super.key});
 
   @override
@@ -43,9 +45,7 @@ class _CustomListTile extends StatelessWidget {
       title: Text(menuItem.title),
       subtitle: Text(menuItem.subtitle),
       onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute<void>(builder: (context) => const ButtonsScreen()),
-        );
+        context.push(menuItem.link);
       },
     );
   }
