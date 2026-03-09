@@ -27,4 +27,10 @@ const menuItems = <MenuItems>[
     link: '/cards',
     icon: Icons.credit_card_outlined,
   ),
+  MenuItems(
+    title: 'Progress Indicators',
+    subtitle: 'Varios tipos de indicadores de progreso en flutter',
+    link: '/progress',
+    icon: Icons.refresh_rounded,
+  ),
 ];
